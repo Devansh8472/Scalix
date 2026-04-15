@@ -101,7 +101,7 @@ a:focus-visible {
 .hero-card-border {
   position: relative;
   width: 100%;
-  height: 24rem;
+  height: clamp(24rem, 60vh, 32rem);
   border-radius: 2rem;
   padding: 3px;
   background: conic-gradient(
@@ -156,17 +156,19 @@ a:focus-visible {
   overflow: hidden;
   min-width: 0;
   border-radius: 1rem;
-  border: 1px solid rgba(11, 74, 125, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-top-color: rgba(255, 255, 255, 0.5); /* Stronger top reflection for gloss */
   background: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.82),
-    rgba(255, 255, 255, 0.62)
+    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0.05)
   );
   box-shadow:
-    0 1px 2px rgba(8, 23, 36, 0.04),
-    0 4px 12px rgba(8, 23, 36, 0.06);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+    0 8px 32px rgba(0, 0, 0, 0.06),
+    inset 0 1px 1px rgba(255, 255, 255, 0.7),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.1);
+  backdrop-filter: saturate(200%) blur(24px);
+  -webkit-backdrop-filter: saturate(200%) blur(24px);
   padding: 6px 12px 6px 16px;
   transition:
     border-radius 0.35s var(--ease-expo),
@@ -179,16 +181,17 @@ a:focus-visible {
 /* On scroll: tighter, more opaque, stronger shadow */
 .nav-header--scrolled .nav-shell {
   border-radius: 0.85rem;
-  border-color: rgba(11, 74, 125, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-top-color: rgba(255, 255, 255, 0.6);
   background: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.96),
-    rgba(255, 255, 255, 0.88)
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.15)
   );
   box-shadow:
-    0 1px 3px rgba(8, 23, 36, 0.06),
-    0 8px 24px rgba(8, 23, 36, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    0 12px 40px rgba(0, 0, 0, 0.1),
+    inset 0 1px 1px rgba(255, 255, 255, 0.8),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.2);
   padding: 4px 12px 4px 14px;
 }
 
@@ -310,20 +313,25 @@ a:focus-visible {
   overflow: hidden;
 }
 
+@keyframes cta-shimmer-continuous {
+  0% {
+    left: -60%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+
 .nav-cta::before {
   content: '';
   position: absolute;
   top: -120%;
-  left: -25%;
+  left: -60%;
   width: 56%;
   height: 320%;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0));
   transform: rotate(18deg);
-  transition: left 0.5s var(--ease-expo);
-}
-
-.nav-cta:hover::before {
-  left: 92%;
+  animation: cta-shimmer-continuous 1.8s infinite ease-in-out;
 }
 
 /* ── Hamburger button ── */

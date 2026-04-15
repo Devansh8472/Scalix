@@ -1,3 +1,32 @@
+.bubble-strategy-call {
+  min-width: 180px;
+  min-height: 56px;
+  font-size: 1.08rem;
+  letter-spacing: 0.01em;
+  box-shadow: 0 4px 24px 0 rgba(11,74,125,0.13), 0 1.5px 8px 0 rgba(45,182,217,0.10);
+  border: none;
+  position: relative;
+  isolation: isolate;
+  border-radius: 1rem;
+}
+@keyframes flashing-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.flashing-gradient {
+  background: linear-gradient(135deg, #F28C22, #ff9e40, #F28C22, #2DB6D9, #F28C22);
+  background-size: 300% 300%;
+  animation: flashing-gradient 2.5s linear infinite;
+  box-shadow: 0 2px 16px 0 rgba(242,140,34,0.18);
+}
 .counter {
   font-size: 16px;
   padding: 5px 10px;

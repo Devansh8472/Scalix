@@ -3,6 +3,7 @@ import combinedLogo from './assets/images/combined-logo-1.png'
 import heroBannerImage from './assets/images/hero banner.webp'
 import scalixLogo from './assets/images/scalix-logo.png'
 import scalixVisualmark from './assets/images/scalix-visualmark.png'
+import missionImage from '../page_3.webp'
 
 const BRAND = {
   navy: '#0B4A7D',
@@ -20,136 +21,136 @@ const Icons = {
   // Services
   Target: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+      <circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" />
     </svg>
   ),
   TrendingUp: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>
+      <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" /><polyline points="16 7 22 7 22 13" />
     </svg>
   ),
   Search: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
     </svg>
   ),
   // Framework
   Compass: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+      <circle cx="12" cy="12" r="10" /><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
     </svg>
   ),
   Filter: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+      <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
     </svg>
   ),
   Zap: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
     </svg>
   ),
   Shield: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
     </svg>
   ),
   // Mission
   CheckCircle: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+      <path d="M22 11.08V12a10 10 0 11-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" />
     </svg>
   ),
   // Hero features
   Layers: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>
+      <polygon points="12 2 2 7 12 12 22 7 12 2" /><polyline points="2 17 12 22 22 17" /><polyline points="2 12 12 17 22 12" />
     </svg>
   ),
   DollarSign: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+      <line x1="12" y1="1" x2="12" y2="23" /><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
     </svg>
   ),
   User: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/>
+      <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" /><circle cx="12" cy="7" r="4" />
     </svg>
   ),
   // Founder features
   Award: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+      <circle cx="12" cy="8" r="7" /><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
     </svg>
   ),
   Briefcase: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/>
+      <rect x="2" y="7" width="20" height="14" rx="2" ry="2" /><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16" />
     </svg>
   ),
   BadgeCheck: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M3.85 8.62a4 4 0 014.78-4.77 4 4 0 016.74 0 4 4 0 014.78 4.78 4 4 0 010 6.74 4 4 0 01-4.77 4.78 4 4 0 01-6.75 0 4 4 0 01-4.78-4.77 4 4 0 010-6.76z"/>
-      <path d="M9 12l2 2 4-4"/>
+      <path d="M3.85 8.62a4 4 0 014.78-4.77 4 4 0 016.74 0 4 4 0 014.78 4.78 4 4 0 010 6.74 4 4 0 01-4.77 4.78 4 4 0 01-6.75 0 4 4 0 01-4.78-4.77 4 4 0 010-6.76z" />
+      <path d="M9 12l2 2 4-4" />
     </svg>
   ),
   Star: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
     </svg>
   ),
   // Blog
   FileText: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+      <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" /><polyline points="10 9 9 9 8 9" />
     </svg>
   ),
   ArrowRight: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+      <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
     </svg>
   ),
   ArrowUpRight: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
+      <line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" />
     </svg>
   ),
   // Case Studies
   BarChart: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/>
+      <line x1="12" y1="20" x2="12" y2="10" /><line x1="18" y1="20" x2="18" y2="4" /><line x1="6" y1="20" x2="6" y2="16" />
     </svg>
   ),
   // Contact
   Phone: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
     </svg>
   ),
   Mail: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" />
     </svg>
   ),
   // Footer social
   Linkedin: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+      <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" />
     </svg>
   ),
   Twitter: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M4 4l11.733 16h4.267l-11.733-16z"/><path d="M4 20l6.768-6.768M20 4l-6.768 6.768"/>
+      <path d="M4 4l11.733 16h4.267l-11.733-16z" /><path d="M4 20l6.768-6.768M20 4l-6.768 6.768" />
     </svg>
   ),
   Instagram: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
     </svg>
   ),
   Globe: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+      <circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
     </svg>
   ),
 }
@@ -252,6 +253,9 @@ function PlaceholderImage({
   showVisualmark = false,
   imageSrc,
   imageAlt,
+  preserveProportions = false,
+  stretchToFit = false,
+  heightClass,
 }: {
   label: string
   tall?: boolean
@@ -259,10 +263,13 @@ function PlaceholderImage({
   showVisualmark?: boolean
   imageSrc?: string
   imageAlt?: string
+  preserveProportions?: boolean
+  stretchToFit?: boolean
+  heightClass?: string
 }) {
   return (
     <div
-      className={`relative w-full ${tall ? 'h-96' : 'h-72'} overflow-hidden rounded-[2rem] border p-5 shadow-2xl`}
+      className={`relative w-full ${heightClass ?? (tall ? 'h-96' : 'h-72')} overflow-hidden rounded-[2rem] border p-5 shadow-2xl`}
       style={{
         borderColor: premium ? `${BRAND.orange}25` : 'rgba(148,163,184,0.16)',
         background: premium
@@ -275,7 +282,7 @@ function PlaceholderImage({
           <img
             src={imageSrc}
             alt={imageAlt ?? label}
-            className="h-full w-full rounded-[1.5rem] object-cover"
+            className={`h-full w-full rounded-[1.5rem] ${stretchToFit ? 'object-fill' : preserveProportions ? 'object-contain' : 'object-cover'}`}
             loading="lazy"
           />
         ) : (
@@ -372,9 +379,9 @@ export default function ScalixDummyWebsite() {
   ]
 
   const heroFeatures: [string, string, React.FC][] = [
-    ['System-Driven', 'Campaigns built around buyer intent and scaling logic.', Icons.Layers],
-    ['Profit-Focused', 'Cleaner spending decisions based on margin reality.', Icons.DollarSign],
-    ['Founder-Led', 'Positioned like a specialist, not a generic agency.', Icons.User],
+    ['System-Driven', 'Campaigns built around Buyer search intent, Matchtype positioning, Scaling layer.', Icons.Layers],
+    ['Profit-Focused', 'We prioritize contribution margin, Strategic Targeting of "Profit Zones."', Icons.DollarSign],
+    ['Architech-Led', 'Specialist-led strategy, not volume-based agency management.', Icons.User],
   ]
 
   const missionItems: [string, React.FC][] = [
@@ -551,19 +558,52 @@ export default function ScalixDummyWebsite() {
             <div>
               <SectionLabel>Premium Amazon PPC Positioning</SectionLabel>
               <h1 className="max-w-3xl text-5xl font-extrabold leading-[1.12] tracking-tight md:text-7xl" style={{ color: brand.navy }}>
-                We Build Amazon PPC Systems That Scale Profit, Not Just Ad Spend.
+                We build profit architecture for Amazon.
               </h1>
               <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-600 md:text-xl">
-                Scalix helps Amazon brands move from messy campaigns and random optimization into structured PPC systems built for cleaner traffic, stronger control, and more profitable growth.
+                Scalix designs structured Amazon growth systems that turn unstable ads into
+                predictable revenue engines. We help Amazon brands move from messy campaigns
+                and random optimization to structured PPC systems built for cleaner traffic, stronger
+                control, and more profitable growth.
               </p>
               <div className="mt-9 flex flex-wrap gap-4">
-                <a href="#contact" className="btn-press inline-flex items-center gap-2 rounded-2xl px-6 py-4 font-semibold text-white shadow-xl transition hover:scale-105" style={ctaPrimaryStyle}>
+                <a
+                  href="#contact"
+                  className="nav-cta btn-press inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-white shadow-lg transition hover:scale-[1.03]"
+                  style={ctaPrimaryStyle}
+                >
                   Get Free PPC Audit
                   <span className="icon-wrap" style={{ width: 18, height: 18 }}><Icons.ArrowRight /></span>
                 </a>
                 <a href="#case-studies" className="btn-press inline-flex items-center gap-2 rounded-2xl border px-6 py-4 font-semibold text-slate-700 transition hover:bg-slate-50" style={ctaSecondaryStyle}>
                   View Case Studies
                   <span className="icon-wrap" style={{ width: 16, height: 16 }}><Icons.ArrowUpRight /></span>
+                </a>
+                <a
+                  href="#" // Replace with tel:... later
+                  className="bubble-strategy-call inline-flex items-center gap-2 rounded-2xl px-6 py-4 font-semibold text-white shadow-xl transition hover:scale-105"
+                  style={{
+                    background: 'linear-gradient(135deg, #0B4A7D 60%, #2DB6D9 100%)',
+                    position: 'relative',
+                    overflow: 'hidden',
+                  }}
+                >
+                  <span style={{ position: 'relative', zIndex: 2 }}>Book a Strategy Call</span>
+                  <span
+                    style={{
+                      position: 'absolute',
+                      left: 0,
+                      top: 0,
+                      width: '100%',
+                      height: '100%',
+                      background:
+                        'linear-gradient(120deg, rgba(255,255,255,0.35) 10%, rgba(255,255,255,0.12) 60%, rgba(255,255,255,0.08) 100%)',
+                      opacity: 0.85,
+                      borderRadius: '1rem',
+                      pointerEvents: 'none',
+                      boxShadow: '0 2px 16px 0 rgba(45,182,217,0.10)',
+                    }}
+                  />
                 </a>
               </div>
               <div className="mt-8 inline-flex max-w-2xl items-center gap-3 rounded-2xl border bg-white/80 px-4 py-3 shadow-sm backdrop-blur" style={{ borderColor: 'rgba(11,74,125,0.16)' }}>
@@ -587,7 +627,7 @@ export default function ScalixDummyWebsite() {
               </div>
             </div>
             {/* ── Premium Hero Image Card ── */}
-            <div className="hero-card-wrapper relative lg:sticky lg:mt-16" style={{ top: 'calc(var(--nav-height) + 2rem)' }}>
+            <div className="hero-card-wrapper relative z-10 lg:sticky lg:mt-16 lg:w-[125%] xl:w-[140%] max-w-none" style={{ top: 'calc(var(--nav-height) + 2rem)' }}>
               {/* Animated gradient border container */}
               <div className="hero-card-border">
                 <div className="hero-card-inner">
@@ -622,7 +662,7 @@ export default function ScalixDummyWebsite() {
           <div>
             <SectionLabel>Who We Are</SectionLabel>
             <h2 className="max-w-2xl text-4xl font-black leading-tight md:text-5xl" style={{ color: brand.navy }}>
-              Not another marketing agency. A specialist Amazon PPC growth partner.
+              Not just another marketing agency. A specialist Amazon PPC growth partner.
             </h2>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
               Scalix is built around one core belief: Amazon advertising works best when structure comes before scaling. That means cleaner campaign architecture, sharper intent segmentation, better budget control, and more disciplined optimization decisions.
@@ -635,10 +675,6 @@ export default function ScalixDummyWebsite() {
                 <span className="icon-wrap" style={{ width: 18, height: 18 }}><Icons.User /></span>
                 Meet the Founder
               </button>
-              <a href="#framework" className="btn-press inline-flex items-center gap-2 rounded-2xl border px-6 py-3 font-semibold transition hover:bg-white" style={{ borderColor: `${brand.orange}55`, color: brand.orange }}>
-                See Our Framework
-                <span className="icon-wrap" style={{ width: 16, height: 16 }}><Icons.ArrowRight /></span>
-              </a>
             </div>
           </div>
         </section>
@@ -663,7 +699,15 @@ export default function ScalixDummyWebsite() {
                 ))}
               </div>
             </div>
-            <PlaceholderImage premium showVisualmark label="Premium dashboard visual: half-cut Amazon PPC analytics interface with ACOS, ROAS, CTR, CPC, purchase and sales blocks in a premium layout." />
+            <PlaceholderImage
+              premium
+              showVisualmark
+              label="Premium dashboard visual: half-cut Amazon PPC analytics interface with ACOS, ROAS, CTR, CPC, purchase and sales blocks in a premium layout."
+              imageSrc={missionImage}
+              imageAlt="Amazon PPC analytics dashboard"
+              stretchToFit
+              heightClass="h-80"
+            />
           </div>
         </section>
 
@@ -674,10 +718,13 @@ export default function ScalixDummyWebsite() {
           <div className="mb-14 max-w-3xl">
             <SectionLabel>Core Systems</SectionLabel>
             <h2 className="text-4xl font-black leading-tight md:text-5xl" style={{ color: brand.navy }}>
-              Premium service positioning built around systems, not generic deliverables.
+              THE SCALIX FRAMEWORK
             </h2>
             <p className="mt-5 text-lg leading-8 text-slate-600">
-              This is where your agency starts looking expensive in a good way. Each offer feels like a framework, not a random list of tasks.
+              Our 4-layer Scalix is a profit-architecture system built on intent, margin, control, and
+              positioning.
+              It brings clarity to campaigns, protects profitability, and turns advertising into a scalable
+              growth system.
             </p>
           </div>
           <div className="grid gap-8 lg:grid-cols-3">
