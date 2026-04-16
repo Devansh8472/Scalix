@@ -494,8 +494,8 @@ export default function ScalixDummyWebsite() {
               className="nav-cta btn-press shrink-0 rounded-xl px-5 py-2.5 text-sm font-semibold text-white shadow-lg transition hover:scale-[1.03]"
               style={ctaPrimaryStyle}
             >
-              <span className="hidden sm:inline">Get Free Audit</span>
-              <span className="sm:hidden">Audit</span>
+              <span className="hidden sm:inline">Get Free PPC Audit</span>
+              <span className="sm:hidden">Get Free PPC Audit</span>
             </a>
             <button
               type="button"
@@ -558,7 +558,7 @@ export default function ScalixDummyWebsite() {
             <div>
               <SectionLabel>Premium Amazon PPC Positioning</SectionLabel>
               <h1 className="max-w-3xl text-5xl font-extrabold leading-[1.12] tracking-tight md:text-7xl" style={{ color: brand.navy }}>
-                We build profit architecture for Amazon.
+                We build profit Architecture for Amazon.
               </h1>
               <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-600 md:text-xl">
                 Scalix designs structured Amazon growth systems that turn unstable ads into
