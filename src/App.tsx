@@ -1112,8 +1112,7 @@ export default function ScalixDummyWebsite() {
               label="Premium dashboard visual: half-cut Amazon PPC analytics interface with ACOS, ROAS, CTR, CPC, purchase and sales blocks in a premium layout."
               imageSrc={missionImage}
               imageAlt="Amazon PPC analytics dashboard"
-              stretchToFit
-              heightClass="h-80"
+              heightClass="h-96 md:h-[30rem] lg:h-[34rem]"
             />
           </div>
         </section>
