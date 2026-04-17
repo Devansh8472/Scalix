@@ -6,9 +6,9 @@ import {
   useCallback,
 } from "react";
 import combinedLogo from "./assets/images/combined-logo-1.png";
-import heroBannerImage from "./assets/images/hero banner.webp";
 import scalixLogo from "./assets/images/scalix-logo.png";
 import scalixVisualmark from "./assets/images/scalix-visualmark.png";
+import heroBannerImage from "./assets/images/mr.diegender.webp";
 import missionImage from "../page_3.webp";
 
 const BRAND = {
@@ -627,7 +627,7 @@ export default function ScalixDummyWebsite() {
     ],
     [
       "Profit-Focused",
-      'We prioritize contribution margin, Strategic Targeting of "Profit Zones."',
+      'We prioritize contribution margin, Strategic Targeting of "Profit Zones".',
       Icons.DollarSign,
     ],
     [
@@ -836,57 +836,6 @@ export default function ScalixDummyWebsite() {
                 structured PPC systems built for cleaner traffic, stronger
                 control, and more profitable growth.
               </p>
-              <div className="mt-10 max-w-2xl">
-                <div
-                  className="rounded-2xl border p-6 shadow-lg"
-                  style={{
-                    borderColor: `${brand.orange}35`,
-                    background:
-                      "linear-gradient(135deg, rgba(242,140,34,0.08), rgba(11,74,125,0.05))",
-                  }}
-                >
-                  {/* Label */}
-                  <div
-                    className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider mb-4"
-                    style={{
-                      backgroundColor: `${brand.orange}15`,
-                      color: brand.orange,
-                    }}
-                  >
-                    Critical Insight
-                  </div>
-
-                  {/* Headline */}
-                  <h2
-                    className="text-2xl md:text-3xl font-black leading-tight"
-                    style={{ color: brand.navy }}
-                  >
-                    Why Most Amazon Brands Fail ?
-                  </h2>
-
-                  {/* Divider */}
-                  <div
-                    className="mt-4 mb-4 h-[2px] w-16 rounded-full"
-                    style={{ background: brand.orange }}
-                  />
-
-                  {/* Content */}
-                  <p className="text-lg leading-8 text-slate-700">
-                    Most Amazon brands don’t fail because of bad products.
-                  </p>
-
-                  <p className="mt-2 text-lg leading-8 text-slate-700 font-semibold">
-                    They fail because of poor campaign structure.
-                  </p>
-
-                  {/* Punchline */}
-                  <p className="mt-4 text-sm text-slate-500">
-                    Random targeting. Messy segmentation. No intent control.
-                    <br />
-                    That’s where profitability silently breaks.
-                  </p>
-                </div>
-              </div>
               <div className="mt-9 flex flex-wrap gap-4">
                 <a
                   href="#contact"
@@ -980,8 +929,7 @@ export default function ScalixDummyWebsite() {
             </div>
             {/* ── Premium Hero Image Card ── */}
             <div
-              className="hero-card-wrapper relative z-10 lg:sticky lg:mt-16 lg:w-[125%] xl:w-[140%] max-w-none"
-              style={{ top: "calc(var(--nav-height) + 2rem)" }}
+              className="hero-card-wrapper relative z-10 lg:w-[125%] xl:w-[140%] max-w-none"
             >
               {/* Animated gradient border container */}
               <div className="hero-card-border">
@@ -1022,6 +970,57 @@ export default function ScalixDummyWebsite() {
                   animationDelay: "1.5s",
                 }}
               />
+              <div className="mt-8 w-full">
+                <div
+                  className="rounded-2xl border p-6 shadow-lg"
+                  style={{
+                    borderColor: `${brand.orange}35`,
+                    background:
+                      "linear-gradient(135deg, rgba(242,140,34,0.08), rgba(11,74,125,0.05))",
+                  }}
+                >
+                  {/* Label */}
+                  <div
+                    className="mb-4 inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider"
+                    style={{
+                      backgroundColor: `${brand.orange}15`,
+                      color: brand.orange,
+                    }}
+                  >
+                    Critical Insight
+                  </div>
+
+                  {/* Headline */}
+                  <h2
+                    className="text-2xl font-black leading-tight md:text-3xl"
+                    style={{ color: brand.navy }}
+                  >
+                    Why Most Amazon Brands Fail ?
+                  </h2>
+
+                  {/* Divider */}
+                  <div
+                    className="mb-4 mt-4 h-[2px] w-16 rounded-full"
+                    style={{ background: brand.orange }}
+                  />
+
+                  {/* Content */}
+                  <p className="text-lg leading-8 text-slate-700">
+                    Most Amazon brands don’t fail because of bad products.
+                  </p>
+
+                  <p className="mt-2 text-lg font-semibold leading-8 text-slate-700">
+                    They fail because of poor campaign structure.
+                  </p>
+
+                  {/* Punchline */}
+                  <p className="mt-4 text-sm text-slate-500">
+                    Random targeting. Messy segmentation. No intent control.
+                    <br />
+                    That’s where profitability silently breaks.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
