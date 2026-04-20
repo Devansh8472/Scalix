@@ -96,12 +96,14 @@ a:focus-visible {
    ═══════════════════════════════════════════════════ */
 .hero-card-wrapper {
   perspective: 1200px;
+  width: min(100%, 46rem);
+  margin-inline: auto;
 }
 
 .hero-card-border {
   position: relative;
   width: 100%;
-  height: clamp(24rem, 60vh, 32rem);
+  height: clamp(18rem, 52vw, 32rem);
   border-radius: 2rem;
   padding: 3px;
   background: conic-gradient(
@@ -131,6 +133,33 @@ a:focus-visible {
   border-radius: calc(2rem - 3px);
   overflow: hidden;
   background: linear-gradient(135deg, rgba(11, 74, 125, 0.06), rgba(242, 140, 34, 0.04));
+}
+
+.critical-insight-card {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 1023px) {
+  .hero-card-wrapper {
+    width: 100%;
+    max-width: 42rem;
+  }
+
+  .hero-card-border {
+    height: clamp(16rem, 56vw, 24rem);
+    border-radius: 1.5rem;
+  }
+
+  .hero-card-inner {
+    border-radius: calc(1.5rem - 3px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-card-wrapper {
+    margin-left: auto;
+    margin-right: 0;
+  }
 }
 
 /* ═══════════════════════════════════════════════════

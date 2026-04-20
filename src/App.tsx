@@ -809,7 +809,7 @@ export default function ScalixDummyWebsite() {
         {/* ═══ HERO ═══ */}
         <section
           id="home"
-          className="reveal reveal-delay-1 relative overflow-x-clip"
+          className="reveal reveal-delay-1 relative overflow-x-hidden"
         >
           <div
             className="absolute inset-0"
@@ -929,7 +929,7 @@ export default function ScalixDummyWebsite() {
             </div>
             {/* ── Premium Hero Image Card ── */}
             <div
-              className="hero-card-wrapper relative z-10 lg:w-[125%] xl:w-[140%] max-w-none"
+              className="hero-card-wrapper relative z-10 min-w-0 w-full max-w-[42rem] justify-self-center lg:max-w-[46rem] lg:justify-self-end"
             >
               {/* Animated gradient border container */}
               <div className="hero-card-border">
@@ -945,17 +945,17 @@ export default function ScalixDummyWebsite() {
                 </div>
               </div>
               {/* Floating visualmark badge */}
-              <div className="pointer-events-none absolute -right-3 -top-3 z-10 flex h-16 w-16 items-center justify-center rounded-2xl border border-white/50 bg-white/80 shadow-xl backdrop-blur-md">
+              <div className="pointer-events-none absolute right-2 top-2 z-10 flex h-12 w-12 items-center justify-center rounded-2xl border border-white/50 bg-white/80 shadow-xl backdrop-blur-md sm:-right-3 sm:-top-3 sm:h-16 sm:w-16">
                 <img
                   src={scalixVisualmark}
                   alt=""
                   aria-hidden="true"
-                  className="h-10 w-10 object-contain"
+                  className="h-8 w-8 object-contain sm:h-10 sm:w-10"
                 />
               </div>
               {/* Floating accent dots */}
               <div
-                className="pointer-events-none absolute -bottom-4 -left-4 h-20 w-20 rounded-full float-anim"
+                className="pointer-events-none absolute -bottom-4 -left-4 hidden h-20 w-20 rounded-full float-anim sm:block"
                 style={{
                   background:
                     "radial-gradient(circle, rgba(242,140,34,0.25), transparent 70%)",
@@ -963,16 +963,16 @@ export default function ScalixDummyWebsite() {
                 }}
               />
               <div
-                className="pointer-events-none absolute -right-6 top-1/3 h-16 w-16 rounded-full float-anim"
+                className="pointer-events-none absolute -right-6 top-1/3 hidden h-16 w-16 rounded-full float-anim lg:block"
                 style={{
                   background:
                     "radial-gradient(circle, rgba(11,74,125,0.2), transparent 70%)",
                   animationDelay: "1.5s",
                 }}
               />
-              <div className="mt-8 w-full">
+              <div className="mt-8 w-full max-w-full">
                 <div
-                  className="rounded-2xl border p-6 shadow-lg"
+                  className="critical-insight-card rounded-2xl border p-5 shadow-lg sm:p-6"
                   style={{
                     borderColor: `${brand.orange}35`,
                     background:
@@ -992,7 +992,7 @@ export default function ScalixDummyWebsite() {
 
                   {/* Headline */}
                   <h2
-                    className="text-2xl font-black leading-tight md:text-3xl"
+                    className="text-xl font-black leading-tight sm:text-2xl md:text-3xl"
                     style={{ color: brand.navy }}
                   >
                     Why Most Amazon Brands Fail ?
@@ -1005,16 +1005,16 @@ export default function ScalixDummyWebsite() {
                   />
 
                   {/* Content */}
-                  <p className="text-lg leading-8 text-slate-700">
+                  <p className="text-base leading-7 text-slate-700 sm:text-lg sm:leading-8">
                     Most Amazon brands don’t fail because of bad products.
                   </p>
 
-                  <p className="mt-2 text-lg font-semibold leading-8 text-slate-700">
+                  <p className="mt-2 text-base font-semibold leading-7 text-slate-700 sm:text-lg sm:leading-8">
                     They fail because of poor campaign structure.
                   </p>
 
                   {/* Punchline */}
-                  <p className="mt-4 text-sm text-slate-500">
+                  <p className="mt-4 text-sm leading-6 text-slate-500">
                     Random targeting. Messy segmentation. No intent control.
                     <br />
                     That’s where profitability silently breaks.
