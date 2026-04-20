@@ -10,6 +10,9 @@ import scalixLogo from "./assets/images/scalix-logo.png";
 import scalixVisualmark from "./assets/images/scalix-visualmark.png";
 import heroBannerImage from "./assets/images/mr.diegender.webp";
 import missionImage from "../page_3.webp";
+import CaseStudiesDetailed, {
+  type DetailedCaseStudyItem,
+} from "./components/ui/case-studies";
 
 const BRAND = {
   navy: "#0B4A7D",
@@ -263,6 +266,19 @@ const Icons = {
     >
       <line x1="7" y1="17" x2="17" y2="7" />
       <polyline points="7 7 17 7 17 17" />
+    </svg>
+  ),
+  X: () => (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <line x1="18" y1="6" x2="6" y2="18" />
+      <line x1="6" y1="6" x2="18" y2="18" />
     </svg>
   ),
   // Case Studies
@@ -593,21 +609,81 @@ export default function ScalixDummyWebsite() {
     },
   ];
 
-  const caseStudies = [
+  const caseStudies: DetailedCaseStudyItem[] = [
     {
+      id: "home-decor",
       title: "Home Decor Brand Growth",
-      stat: "Lower ACOS. Better structure.",
+      stat: "ACOS down 38% in 90 days",
       desc: "Turned messy traffic into a cleaner PPC system with stronger allocation logic and clearer scaling decisions.",
+      quote:
+        "The campaign architecture finally made sense. Instead of scattered spend, we gained precise intent control and much cleaner scaling decisions week-over-week.",
+      name: "Nora Elahi",
+      role: "Founder, Home Decor Brand",
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80",
+      iconKey: "monitor",
+      metrics: [
+        {
+          value: "38%",
+          label: "ACOS Reduction",
+          sub: "Within the first 90 days",
+        },
+        {
+          value: "2.1x",
+          label: "ROAS Lift",
+          sub: "After account restructuring",
+        },
+      ],
     },
     {
+      id: "restructure-win",
       title: "Campaign Restructure Win",
-      stat: "Cleaner targeting. Less waste.",
+      stat: "Spend waste cut by 41%",
       desc: "Rebuilt campaign segmentation so spend followed buyer intent instead of being spread across random traffic pockets.",
+      quote:
+        "Once segmentation was rebuilt around search intent and match-type purpose, wasted traffic dropped and reporting became far easier to act on.",
+      name: "Rhea Kapoor",
+      role: "PPC Manager, Consumer Brand",
+      image:
+        "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80",
+      iconKey: "layoutDashboard",
+      metrics: [
+        {
+          value: "41%",
+          label: "Waste Reduced",
+          sub: "Low-intent spend eliminated",
+        },
+        {
+          value: "63%",
+          label: "Signal Clarity",
+          sub: "Cleaner search-term visibility",
+        },
+      ],
     },
     {
+      id: "profit-first",
       title: "Profit-First PPC System",
-      stat: "From ad spend to control.",
+      stat: "Contribution margin +26%",
       desc: "Shifted the account away from activity-based management and into a more disciplined profit-focused structure.",
+      quote:
+        "The account moved from daily ad activity to a profit-control system. Forecasting became calmer, and scaling no longer came with silent margin damage.",
+      name: "Daniel Chen",
+      role: "Growth Lead, E-commerce Brand",
+      image:
+        "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80",
+      iconKey: "users",
+      metrics: [
+        {
+          value: "26%",
+          label: "Margin Improvement",
+          sub: "After profit-led bid controls",
+        },
+        {
+          value: "1.8x",
+          label: "Forecast Reliability",
+          sub: "With structured scaling loops",
+        },
+      ],
     },
   ];
 
@@ -679,15 +755,18 @@ export default function ScalixDummyWebsite() {
   const scrolled = useScrolled(32);
   const activeSection = useActiveSection(sectionIds);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [caseStudiesOpen, setCaseStudiesOpen] = useState(false);
+  const [activeCaseStudyIndex, setActiveCaseStudyIndex] = useState(0);
 
-  // Lock body scroll when mobile menu is open
+  // Lock body scroll when mobile nav or case studies popup is open
   useEffect(() => {
+    const shouldLockScroll = mobileOpen || caseStudiesOpen;
     const { style: bodyStyle } = document.body;
     const { style: htmlStyle } = document.documentElement;
     const previousBodyOverflow = bodyStyle.overflow;
     const previousHtmlOverflow = htmlStyle.overflow;
 
-    if (mobileOpen) {
+    if (shouldLockScroll) {
       bodyStyle.overflow = "hidden";
       htmlStyle.overflow = "hidden";
     } else {
@@ -699,7 +778,7 @@ export default function ScalixDummyWebsite() {
       bodyStyle.overflow = previousBodyOverflow;
       htmlStyle.overflow = previousHtmlOverflow;
     };
-  }, [mobileOpen]);
+  }, [mobileOpen, caseStudiesOpen]);
 
   useEffect(() => {
     const onResize = () => {
@@ -710,6 +789,17 @@ export default function ScalixDummyWebsite() {
   }, []);
 
   const closeMobile = useCallback(() => setMobileOpen(false), []);
+  const closeCaseStudies = useCallback(() => setCaseStudiesOpen(false), []);
+
+  const openCaseStudies = useCallback(
+    (index = 0) => {
+      const safeIndex = Math.max(0, Math.min(index, caseStudies.length - 1));
+      setMobileOpen(false);
+      setActiveCaseStudyIndex(safeIndex);
+      setCaseStudiesOpen(true);
+    },
+    [caseStudies.length],
+  );
 
   return (
     <div
@@ -1276,6 +1366,9 @@ export default function ScalixDummyWebsite() {
               type="button"
               className="btn-press inline-flex items-center gap-2 rounded-2xl border px-5 py-3 text-sm font-semibold transition hover:bg-white"
               style={{ borderColor: `${brand.navy}33`, color: brand.navy }}
+              onClick={() => openCaseStudies(0)}
+              aria-haspopup="dialog"
+              aria-controls="case-studies-popup"
             >
               View Full Case Studies
               <span className="icon-wrap" style={{ width: 16, height: 16 }}>
@@ -1284,16 +1377,23 @@ export default function ScalixDummyWebsite() {
             </button>
           </div>
           <div className="grid gap-8 lg:grid-cols-3">
-            {caseStudies.map((item) => (
-              <div
-                key={item.title}
-                className="lift-card group rounded-[2rem] border bg-white p-6 shadow-xl shadow-slate-200/60"
+            {caseStudies.map((item, index) => (
+              <button
+                type="button"
+                key={item.id}
+                className="case-study-card-trigger lift-card group w-full rounded-[2rem] border bg-white p-6 text-left shadow-xl shadow-slate-200/60"
                 style={{ borderColor: "rgba(148,163,184,0.18)" }}
+                onClick={() => openCaseStudies(index)}
+                aria-label={`Open full case study: ${item.title}`}
+                aria-haspopup="dialog"
+                aria-controls="case-studies-popup"
               >
                 <div className="mb-5">
                   <PlaceholderImage
                     premium
                     label={`Premium case study placeholder: ${item.title}`}
+                    imageSrc={item.image}
+                    imageAlt={`${item.title} case study visual`}
                   />
                 </div>
                 <div
@@ -1320,7 +1420,19 @@ export default function ScalixDummyWebsite() {
                   {item.title}
                 </div>
                 <p className="mt-4 leading-8 text-slate-600">{item.desc}</p>
-              </div>
+                <div
+                  className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold transition-colors group-hover:text-slate-900"
+                  style={{ color: brand.navy }}
+                >
+                  Open full case
+                  <span
+                    className="icon-wrap transition-transform group-hover:translate-x-1"
+                    style={{ width: 14, height: 14 }}
+                  >
+                    <Icons.ArrowRight />
+                  </span>
+                </div>
+              </button>
             ))}
           </div>
         </section>
@@ -1501,6 +1613,46 @@ export default function ScalixDummyWebsite() {
           </div>
         </section>
       </main>
+
+      <div
+        className={`case-studies-modal-layer ${caseStudiesOpen ? "case-studies-modal-layer--open" : ""}`}
+        aria-hidden={!caseStudiesOpen}
+      >
+        <div className="case-studies-modal-backdrop" aria-hidden="true" />
+        <section
+          id="case-studies-popup"
+          className="case-studies-modal-shell"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="case-studies-detailed-heading"
+        >
+          <button
+            type="button"
+            className="case-studies-close-button"
+            onClick={closeCaseStudies}
+            aria-label="Close case studies"
+          >
+            <span className="icon-wrap" style={{ width: 18, height: 18 }}>
+              <Icons.X />
+            </span>
+          </button>
+
+          <CaseStudiesDetailed
+            studies={caseStudies}
+            activeStudyId={
+              caseStudies[
+                Math.max(0, Math.min(activeCaseStudyIndex, caseStudies.length - 1))
+              ]?.id
+            }
+            onActiveStudyChange={(studyId) => {
+              const matchIndex = caseStudies.findIndex(
+                (study) => study.id === studyId,
+              );
+              if (matchIndex >= 0) setActiveCaseStudyIndex(matchIndex);
+            }}
+          />
+        </section>
+      </div>
 
       {/* ═══ FOOTER ═══ */}
       <footer className="border-t border-slate-200 bg-white">
