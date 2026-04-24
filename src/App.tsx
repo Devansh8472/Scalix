@@ -909,7 +909,7 @@ export default function ScalixDummyWebsite() {
             }}
           />
           <div
-            className={`${sectionInset} relative grid gap-12 pt-6 pb-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-start lg:pt-8 lg:pb-28`}
+            className={`${sectionInset} relative grid gap-12 pt-6 pb-20 lg:grid-cols-[1fr_1.2fr] lg:items-start lg:pt-8 lg:pb-28`}
           >
             <div>
               <SectionLabel>Premium Amazon PPC Positioning</SectionLabel>
@@ -1019,7 +1019,7 @@ export default function ScalixDummyWebsite() {
             </div>
             {/* ── Premium Hero Image Card ── */}
             <div
-              className="hero-card-wrapper relative z-10 min-w-0 w-full max-w-[42rem] justify-self-center lg:max-w-[46rem] lg:justify-self-end"
+              className="hero-card-wrapper relative z-10 min-w-0 w-full max-w-none justify-self-center lg:justify-self-end lg:mr-4"
             >
               {/* Animated gradient border container */}
               <div className="hero-card-border">
@@ -1060,7 +1060,7 @@ export default function ScalixDummyWebsite() {
                   animationDelay: "1.5s",
                 }}
               />
-              <div className="mt-8 w-full max-w-full">
+              <div className="mt-8 w-full max-w-none">
                 <div
                   className="critical-insight-card rounded-2xl border p-5 shadow-lg sm:p-6"
                   style={{
@@ -1381,27 +1381,19 @@ export default function ScalixDummyWebsite() {
               <button
                 type="button"
                 key={item.id}
-                className="case-study-card-trigger lift-card group w-full rounded-[2rem] border bg-white p-6 text-left shadow-xl shadow-slate-200/60"
+                className="case-study-card-trigger lift-card group w-full rounded-[2rem] border bg-white p-8 text-left shadow-xl shadow-slate-200/60"
                 style={{ borderColor: "rgba(148,163,184,0.18)" }}
                 onClick={() => openCaseStudies(index)}
                 aria-label={`Open full case study: ${item.title}`}
                 aria-haspopup="dialog"
                 aria-controls="case-studies-popup"
               >
-                <div className="mb-5">
-                  <PlaceholderImage
-                    premium
-                    label={`Premium case study placeholder: ${item.title}`}
-                    imageSrc={item.image}
-                    imageAlt={`${item.title} case study visual`}
-                  />
-                </div>
                 <div
-                  className="mb-3 icon-wrap icon-bubble"
+                  className="mb-4 icon-wrap icon-bubble"
                   style={{
                     background:
-                      "linear-gradient(135deg, rgba(11,74,125,0.08), rgba(45,182,217,0.06))",
-                    borderColor: "rgba(11,74,125,0.12)",
+                      "linear-gradient(135deg, rgba(11,74,125,0.12), rgba(45,182,217,0.08))",
+                    borderColor: "rgba(11,74,125,0.18)",
                     color: brand.navy,
                   }}
                 >
@@ -1424,7 +1416,7 @@ export default function ScalixDummyWebsite() {
                   className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold transition-colors group-hover:text-slate-900"
                   style={{ color: brand.navy }}
                 >
-                  Open full case
+                  Open full case study
                   <span
                     className="icon-wrap transition-transform group-hover:translate-x-1"
                     style={{ width: 14, height: 14 }}

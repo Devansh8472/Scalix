@@ -224,18 +224,34 @@ export default function CaseStudiesDetailed({
                         </h3>
                       </blockquote>
 
-                      <figcaption className="mt-2 flex items-center gap-4 text-left">
-                        <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/60 bg-white/55 text-slate-700">
-                          <Icon className="h-5 w-5" />
-                        </span>
-                        <div className="flex flex-col gap-0.5">
-                          <span className="text-base font-semibold text-slate-900">
-                            {study.name}
+                      <figcaption className="mt-2 flex flex-col gap-4 text-left">
+                        <div className="flex items-center gap-4">
+                          <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/60 bg-white/55 text-slate-700">
+                            <Icon className="h-5 w-5" />
                           </span>
-                          <span className="text-sm text-slate-600">
-                            {study.role}
-                          </span>
+                          <div className="flex flex-col gap-0.5">
+                            <span className="text-base font-semibold text-slate-900">
+                              {study.name}
+                            </span>
+                            <span className="text-sm text-slate-600">
+                              {study.role}
+                            </span>
+                          </div>
                         </div>
+                        
+                        <a
+                          href={`case-study.html?id=${study.id}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 rounded-full border border-white/60 bg-white/55 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-white/75"
+                        >
+                          View Full Details
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+                            <polyline points="15,3 21,3 21,8"/>
+                            <line x1="16" y1="8" x2="21" y2="13"/>
+                          </svg>
+                        </a>
                       </figcaption>
                     </figure>
                   </div>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Case Study</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+    <div class="container mx-auto px-6 py-12">
+        <h1 id="case-study-title">Loading...</h1>
+        <p id="case-study-description">Loading...</p>
+        <div id="test-output"></div>
+    </div>
+
+    <script>
+        // Simple test data
+        const caseStudies = {
+            'profit-first': {
+                title: 'Profit-First PPC System',
+                description: 'Test description for profit-first case study'
+            }
+        };
+
+        function getCaseStudyId() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('id') || 'home-decor';
+        }
+
+        function populateCaseStudy() {
+            const id = getCaseStudyId();
+            const testOutput = document.getElementById('test-output');
+            
+            testOutput.innerHTML = `
+                <p>Current ID: ${id}</p>
+                <p>Available IDs: ${Object.keys(caseStudies).join(', ')}</p>
+                <p>Case study exists: ${!!caseStudies[id]}</p>
+            `;
+            
+            const caseStudy = caseStudies[id];
+            
+            if (!caseStudy) {
+                document.getElementById('case-study-title').textContent = 'Case Study Not Found';
+                return;
+            }
+
+            document.getElementById('case-study-title').textContent = caseStudy.title;
+            document.getElementById('case-study-description').textContent = caseStudy.description;
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', populateCaseStudy);
+    </script>
+</body>
+</html>

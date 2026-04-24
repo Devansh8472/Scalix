@@ -103,7 +103,7 @@ a:focus-visible {
 .hero-card-border {
   position: relative;
   width: 100%;
-  height: clamp(18rem, 52vw, 32rem);
+  height: clamp(18rem, 28vw, 22rem);
   border-radius: 2rem;
   padding: 3px;
   background: conic-gradient(
@@ -146,7 +146,7 @@ a:focus-visible {
   }
 
   .hero-card-border {
-    height: clamp(16rem, 56vw, 24rem);
+    height: clamp(16rem, 32vw, 20rem);
     border-radius: 1.5rem;
   }
 

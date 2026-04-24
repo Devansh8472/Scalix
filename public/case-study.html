@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scalix - Case Study Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: "#0B4A7D",
+                        orange: "#F28C22",
+                        sky: "#2DB6D9",
+                        soft: "#F7FAFC",
+                        dark: "#081724",
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out infinite 1.5s',
+                        'reveal': 'reveal 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards',
+                        'reveal-delay-1': 'reveal 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s forwards',
+                        'reveal-delay-2': 'reveal 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        reveal: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .reveal { opacity: 0; }
+        .lift-card {
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .lift-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(11, 74, 125, 0.15);
+        }
+        .btn-press {
+            transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .btn-press:hover {
+            transform: scale(1.02);
+        }
+        .btn-press:active {
+            transform: scale(0.98);
+        }
+        .icon-wrap {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .icon-bubble {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 1rem;
+            border: 1px solid;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .gradient-border {
+            background: linear-gradient(135deg, #0B4A7D, #2DB6D9, #F28C22);
+            padding: 2px;
+            border-radius: 1rem;
+        }
+        .gradient-border-inner {
+            background: white;
+            border-radius: calc(1rem - 2px);
+            padding: 1.5rem;
+        }
+    </style>
+</head>
+<body class="bg-[#F7FAFC] text-[#081724]">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="h-10 w-10">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <circle cx="12" cy="12" r="6"/>
+                        <circle cx="12" cy="12" r="2"/>
+                    </svg>
+                </div>
+                <h1 class="text-xl font-bold" style="color: #0B4A7D;">Scalix</h1>
+            </div>
+            <a href="index.html" class="btn-press inline-flex items-center gap-2 rounded-xl border px-4 py-2 text-sm font-semibold transition hover:bg-slate-50" style="border-color: rgba(11,74,125,0.2); color: #0B4A7D;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                    <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+                Back to Main Site
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        <!-- Case Study Header -->
+        <section class="reveal mb-16">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] mb-6" style="border-color: rgba(242,140,34,0.28); background-color: rgba(242,140,34,0.12); color: #F28C22;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <circle cx="12" cy="12" r="6"/>
+                        <circle cx="12" cy="12" r="2"/>
+                    </svg>
+                    <span>Case Study</span>
+                </div>
+                <h1 id="case-study-title" class="text-5xl font-black leading-tight mb-6" style="color: #0B4A7D;">Loading...</h1>
+                <div id="case-study-stat" class="text-2xl font-bold mb-4" style="color: #F28C22;">Loading...</div>
+                <p id="case-study-description" class="text-xl leading-8 text-slate-600 max-w-3xl mx-auto">Loading...</p>
+                <div id="case-study-image" class="mt-8 max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl">
+                    <img id="case-study-img" src="" alt="Case study hero image" class="w-full h-auto object-cover">
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Metrics -->
+        <section class="reveal reveal-delay-1 mb-16">
+            <h2 class="text-3xl font-black mb-8 text-center" style="color: #0B4A7D;">Key Results</h2>
+            <div id="metrics-container" class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <!-- Metrics will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Challenge Section -->
+        <section class="reveal reveal-delay-2 mb-16">
+            <div class="gradient-border max-w-4xl mx-auto">
+                <div class="gradient-border-inner">
+                    <h3 class="text-2xl font-black mb-4" style="color: #0B4A7D;">The Challenge</h3>
+                    <div id="challenge-content" class="text-lg leading-8 text-slate-700">
+                        Loading challenge details...
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Section -->
+        <section class="reveal reveal-delay-2 mb-16">
+            <div class="gradient-border max-w-4xl mx-auto">
+                <div class="gradient-border-inner">
+                    <h3 class="text-2xl font-black mb-4" style="color: #0B4A7D;">Our Solution</h3>
+                    <div id="solution-content" class="text-lg leading-8 text-slate-700">
+                        Loading solution details...
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACOS/TACOS Performance Metrics -->
+        <section class="reveal reveal-delay-2 mb-16">
+            <h2 class="text-3xl font-black mb-12 text-center" style="color: #0B4A7D;">Performance Metrics</h2>
+            <div class="max-w-5xl mx-auto">
+                <div class="grid gap-8 lg:grid-cols-2">
+                    <div class="bg-white rounded-2xl border-2 p-8 shadow-lg" style="border-color: rgba(11,74,125,0.1);">
+                        <h3 class="text-2xl font-bold mb-6" style="color: #0B4A7D;">ACOS Performance</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-slate-600">Before:</span>
+                                <span id="acos-before" class="text-2xl font-bold text-red-600">Loading...</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-slate-600">After:</span>
+                                <span id="acos-after" class="text-2xl font-bold text-green-600">Loading...</span>
+                            </div>
+                            <div class="h-px bg-slate-200 my-4"></div>
+                            <div class="flex justify-between items-center">
+                                <span class="font-semibold">Improvement:</span>
+                                <span id="acos-improvement" class="text-lg font-bold" style="color: #F28C22;">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl border-2 p-8 shadow-lg" style="border-color: rgba(11,74,125,0.1);">
+                        <h3 class="text-2xl font-bold mb-6" style="color: #0B4A7D;">TACOS Performance</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-slate-600">Before:</span>
+                                <span id="tacos-before" class="text-2xl font-bold text-red-600">Loading...</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-slate-600">After:</span>
+                                <span id="tacos-after" class="text-2xl font-bold text-green-600">Loading...</span>
+                            </div>
+                            <div class="h-px bg-slate-200 my-4"></div>
+                            <div class="flex justify-between items-center">
+                                <span class="font-semibold">Improvement:</span>
+                                <span id="tacos-improvement" class="text-lg font-bold" style="color: #F28C22;">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 bg-gradient-to-r from-blue-50 to-orange-50 rounded-2xl p-6">
+                    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4" id="additional-metrics">
+                        <!-- Additional metrics will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Approach -->
+        <section class="reveal reveal-delay-2 mb-16">
+            <h2 class="text-3xl font-black mb-12 text-center" style="color: #0B4A7D;">Our Strategic Approach</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-3xl border-2 p-8 shadow-lg" style="border-color: rgba(242,140,34,0.15);">
+                    <div id="approach-content" class="prose prose-lg max-w-none">
+                        <!-- Approach content will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonial -->
+        <section class="reveal reveal-delay-2 mb-16">
+            <div class="bg-white rounded-3xl border-2 p-8 shadow-xl max-w-4xl mx-auto" style="border-color: rgba(242,140,34,0.2);">
+                <blockquote class="text-xl leading-8 italic mb-6" style="color: #0B4A7D;">
+                    <span id="testimonial-quote">Loading testimonial...</span>
+                </blockquote>
+                <div class="flex items-center gap-4">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white font-bold text-xl">
+                        <span id="testimonial-initials">Loading...</span>
+                    </div>
+                    <div>
+                        <div id="testimonial-name" class="font-bold text-lg" style="color: #0B4A7D;">Loading...</div>
+                        <div id="testimonial-role" class="text-slate-600">Loading...</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Timeline -->
+        <section class="reveal reveal-delay-2 mb-16">
+            <h2 class="text-3xl font-black mb-12 text-center" style="color: #0B4A7D;">Implementation Process</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-8">
+                    <div class="flex gap-6 items-start">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-orange-500 flex items-center justify-center text-white font-bold">1</div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-2" style="color: #0B4A7D;">Audit & Analysis</h4>
+                            <p class="text-slate-600">Comprehensive review of existing campaign structure, performance metrics, and optimization opportunities.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 items-start">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-sky-500 flex items-center justify-center text-white font-bold">2</div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-2" style="color: #0B4A7D;">Strategy Development</h4>
+                            <p class="text-slate-600">Design of intent-based campaign architecture with proper segmentation and scaling framework.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 items-start">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-navy flex items-center justify-center text-white font-bold">3</div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-2" style="color: #0B4A7D;">Implementation & Monitoring</h4>
+                            <p class="text-slate-600">Gradual rollout of new structure with continuous monitoring and optimization adjustments.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 items-start">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-orange-500 flex items-center justify-center text-white font-bold">4</div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-2" style="color: #0B4A7D;">Scale & Optimize</h4>
+                            <p class="text-slate-600">Systematic scaling of successful elements while maintaining profitability and control.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="reveal reveal-delay-2 text-center py-16 bg-gradient-to-r from-blue-50 to-orange-50 rounded-3xl">
+            <h2 class="text-3xl font-black mb-6" style="color: #0B4A7D;">Ready to Transform Your Amazon PPC?</h2>
+            <p class="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
+                Get the same structured approach that delivered these results for your brand.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="mailto:contact@scalix.com" class="btn-press inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:scale-[1.03]" style="background: linear-gradient(135deg, #F28C22, #ff9e40);">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                    Get Free PPC Audit
+                </a>
+                <a href="tel:+1234567890" class="btn-press inline-flex items-center gap-2 rounded-2xl border px-6 py-3 font-semibold text-slate-700 transition hover:bg-slate-50" style="border-color: rgba(11,74,125,0.2);">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                    </svg>
+                    Book Strategy Call
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="h-8 w-8">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <circle cx="12" cy="12" r="6"/>
+                            <circle cx="12" cy="12" r="2"/>
+                        </svg>
+                    </div>
+                    <span class="font-bold" style="color: #0B4A7D;">Scalix</span>
+                </div>
+                <div class="text-slate-600 text-sm">
+                    © 2024 Scalix Marketing Solutions. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Case study data
+        const caseStudies = {
+            'home-decor': {
+                title: 'Home Decor Brand Growth',
+                stat: 'ACOS down 38% in 90 days',
+                description: 'Turned messy traffic into a cleaner PPC system with stronger allocation logic and clearer scaling decisions.',
+                quote: 'The campaign architecture finally made sense. Instead of scattered spend, we gained precise intent control and much cleaner scaling decisions week-over-week.',
+                name: 'Nora Elahi',
+                role: 'Founder, Home Decor Brand',
+                image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80',
+                metrics: [
+                    { value: '38%', label: 'ACOS Reduction', sub: 'Within the first 90 days' },
+                    { value: '2.1x', label: 'ROAS Lift', sub: 'After account restructuring' },
+                    { value: '45%', label: 'TACOS Improvement', sub: 'Total ad cost to sales ratio' }
+                ],
+                challenge: 'The home decor brand was struggling with inefficient campaign structure, leading to high ACOS (42%) and unpredictable performance. Their campaigns were poorly segmented, with mixed intent keywords causing budget waste on low-converting traffic. The account had 87 campaigns with overlapping keywords and no clear intent-based structure.',
+                solution: 'We implemented a comprehensive campaign restructuring based on buyer intent phases. This included:\n\n1. **Intent-Based Campaign Architecture**: Created separate campaigns for Discovery (auto/broad), Consideration (phrase match), and High-Intent (exact match) phases.\n\n2. **Margin-Based Bidding**: Implemented bid strategies based on product margins rather than just ACOS targets.\n\n3. **Search Term Control**: Established strict search term management with daily negative keyword additions and positive term expansion.\n\n4. **Budget Allocation Logic**: Redistributed budget based on intent performance rather than historical spend patterns.',
+                approach: 'Our systematic approach involved a 4-phase implementation:\n\n**Phase 1: Audit & Analysis** (Week 1-2)\n- Deep dive into existing campaign structure\n- Search term analysis and intent mapping\n- Margin analysis by product category\n- Competitor benchmarking\n\n**Phase 2: Foundation Building** (Week 3-4)\n- Created new intent-based campaign structure\n- Implemented initial negative keyword lists\n- Set up tracking and reporting dashboards\n\n**Phase 3: Optimization & Scaling** (Week 5-8)\n- Daily search term management\n- Bid adjustments based on margin data\n- Gradual budget reallocation to high-performing intents\n\n**Phase 4: Advanced Control** (Week 9-12)\n- Implemented TACOS monitoring system\n- Advanced match type positioning\n- Seasonal scaling protocols',
+                results: {
+                    acos: { before: 42, after: 26, improvement: '38% reduction' },
+                    tacos: { before: 28, after: 15.4, improvement: '45% improvement' },
+                    roas: { before: 2.38, after: 3.85, improvement: '62% increase' },
+                    margin: { before: 18, after: 24.5, improvement: '36% increase' }
+                }
+            },
+            'restructure-win': {
+                title: 'Campaign Restructure Win',
+                stat: 'Spend waste cut by 41%',
+                description: 'Rebuilt campaign segmentation so spend followed buyer intent instead of being spread across random traffic pockets.',
+                quote: 'Once segmentation was rebuilt around search intent and match-type purpose, wasted traffic dropped and reporting became far easier to act on.',
+                name: 'Rhea Kapoor',
+                role: 'PPC Manager, Consumer Brand',
+                image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80',
+                metrics: [
+                    { value: '41%', label: 'Waste Reduced', sub: 'Low-intent spend eliminated' },
+                    { value: '63%', label: 'Signal Clarity', sub: 'Cleaner search-term visibility' },
+                    { value: '29%', label: 'ACOS Reduction', sub: 'From 35% to 24.8%' }
+                ],
+                challenge: 'The consumer brand\'s account suffered from poor campaign segmentation with 124 campaigns and 3,847 keywords. Budget was being spread across random traffic pockets without clear intent targeting, making it impossible to optimize effectively. ACOS was at 35% with inconsistent performance across product categories.',
+                solution: 'We completely rebuilt the campaign architecture around search intent and match-type purpose. This involved:\n\n1. **Campaign Consolidation**: Reduced from 124 to 32 strategically designed campaigns.\n\n2. **Intent Segmentation**: Clear separation between research, consideration, and purchase intent.\n\n3. **Match Type Strategy**: Auto campaigns for discovery, phrase for validation, exact for scaling.\n\n4. **Search Term Governance**: Implemented daily review and management protocols.',
+                approach: 'Our restructuring methodology:\n\n**Week 1: Complete Audit**\n- Mapped all existing keywords to intent phases\n- Identified wasted spend patterns\n- Created new campaign blueprint\n\n**Week 2: Structure Implementation**\n- Built new campaign hierarchy\n- Migrated high-performing keywords\n- Set up initial negative lists\n\n**Week 3-4: Optimization Phase**\n- Daily search term analysis\n- Bid adjustments based on intent performance\n- Gradual budget migration\n\n**Week 5-6: Fine-tuning**\n- Advanced match type positioning\n- Seasonal adjustments\n- Performance validation',
+                results: {
+                    acos: { before: 35, after: 24.8, improvement: '29% reduction' },
+                    tacos: { before: 22, after: 16.2, improvement: '26% improvement' },
+                    waste: { before: 43, after: 25.4, improvement: '41% reduction' },
+                    efficiency: { before: 57, after: 82, improvement: '44% increase' }
+                }
+            },
+            'profit-first': {
+                title: 'Profit-First PPC System',
+                stat: 'Contribution margin +26%',
+                description: 'Shifted the account away from activity-based management and into a more disciplined profit-focused structure.',
+                quote: 'The account moved from daily ad activity to a profit-control system. Forecasting became calmer, and scaling no longer came with silent margin damage.',
+                name: 'Daniel Chen',
+                role: 'Growth Lead, E-commerce Brand',
+                image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80',
+                metrics: [
+                    { value: '26%', label: 'Margin Improvement', sub: 'After profit-led bid controls' },
+                    { value: '1.8x', label: 'Forecast Reliability', sub: 'With structured scaling loops' },
+                    { value: '33%', label: 'TACOS Reduction', sub: 'From 31% to 20.8%' }
+                ],
+                challenge: 'The e-commerce brand was focused on vanity metrics rather than profitability. Their optimization decisions were based on activity rather than margin impact, leading to scaling that damaged contribution margins. ACOS looked healthy at 22%, but TACOS was at 31% indicating margin erosion.',
+                solution: 'We implemented a profit-first PPC system with:\n\n1. **Margin-Based Architecture**: Campaign structure built around product profitability tiers.\n\n2. **TACOS Monitoring**: Real-time tracking of total ad cost impact on overall margins.\n\n3. **Profit-Led Bidding**: Bid strategies based on contribution margins rather than revenue targets.\n\n4. **Scaling Governance**: Controlled expansion protocols that protect margin thresholds.',
+                approach: 'Profit-first implementation strategy:\n\n**Phase 1: Margin Analysis** (Week 1-2)\n- Detailed product-level margin calculation\n- Identified profitable vs unprofitable segments\n- Created margin-based campaign structure\n\n**Phase 2: System Implementation** (Week 3-4)\n- Set up TACOS tracking dashboard\n- Implemented margin-based bidding rules\n- Created scaling guardrails\n\n**Phase 3: Optimization** (Week 5-8)\n- Daily margin performance monitoring\n- Bid adjustments based on margin targets\n- Strategic scaling within profit constraints\n\n**Phase 4: Advanced Control** (Week 9-12)\n- Predictive margin modeling\n- Automated scaling rules\n- Advanced reporting systems',
+                results: {
+                    acos: { before: 22, after: 19.5, improvement: '11% reduction' },
+                    tacos: { before: 31, after: 20.8, improvement: '33% reduction' },
+                    margin: { before: 15.2, after: 19.2, improvement: '26% increase' },
+                    scaling: { before: 12, after: 28, improvement: '133% increase' }
+                }
+            }
+        };
+
+        // Get case study ID from URL
+        function getCaseStudyId() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('id') || 'home-decor';
+        }
+
+        // Populate page with case study data
+        function populateCaseStudy() {
+            const id = getCaseStudyId();
+            console.log('Loading case study:', id);
+            console.log('Available case studies:', Object.keys(caseStudies));
+            
+            const caseStudy = caseStudies[id];
+            console.log('Case study data:', caseStudy);
+            
+            if (!caseStudy) {
+                console.error('Case study not found:', id);
+                document.getElementById('case-study-title').textContent = 'Case Study Not Found';
+                return;
+            }
+
+            // Update basic info
+            const titleElement = document.getElementById('case-study-title');
+            const statElement = document.getElementById('case-study-stat');
+            const descElement = document.getElementById('case-study-description');
+            
+            if (titleElement) titleElement.textContent = caseStudy.title;
+            if (statElement) statElement.textContent = caseStudy.stat;
+            if (descElement) descElement.textContent = caseStudy.description;
+            
+            // Update image
+            if (caseStudy.image) {
+                document.getElementById('case-study-img').src = caseStudy.image;
+                document.getElementById('case-study-image').style.display = 'block';
+            } else {
+                document.getElementById('case-study-image').style.display = 'none';
+            }
+            
+            // Update testimonial
+            document.getElementById('testimonial-quote').textContent = caseStudy.quote;
+            document.getElementById('testimonial-name').textContent = caseStudy.name;
+            document.getElementById('testimonial-role').textContent = caseStudy.role;
+            document.getElementById('testimonial-initials').textContent = caseStudy.name.split(' ').map(n => n[0]).join('');
+            
+            // Update challenge and solution
+            document.getElementById('challenge-content').innerHTML = caseStudy.challenge.replace(/\n/g, '<br>');
+            document.getElementById('solution-content').innerHTML = caseStudy.solution.replace(/\n/g, '<br>');
+            
+            // Update approach content
+            if (caseStudy.approach) {
+                document.getElementById('approach-content').innerHTML = caseStudy.approach.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/^- (.*$)/gim, '<li>$1</li>').replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
+            }
+            
+            // Update ACOS/TACOS metrics
+            if (caseStudy.results) {
+                document.getElementById('acos-before').textContent = caseStudy.results.acos.before + '%';
+                document.getElementById('acos-after').textContent = caseStudy.results.acos.after + '%';
+                document.getElementById('acos-improvement').textContent = caseStudy.results.acos.improvement;
+                
+                document.getElementById('tacos-before').textContent = caseStudy.results.tacos.before + '%';
+                document.getElementById('tacos-after').textContent = caseStudy.results.tacos.after + '%';
+                document.getElementById('tacos-improvement').textContent = caseStudy.results.tacos.improvement;
+                
+                // Populate additional metrics
+                const additionalMetrics = [];
+                if (caseStudy.results.roas) {
+                    additionalMetrics.push(`
+                        <div class="text-center">
+                            <div class="text-2xl font-black mb-1" style="color: #0B4A7D;">${caseStudy.results.roas.after}x</div>
+                            <div class="text-sm font-semibold" style="color: #F28C22;">ROAS</div>
+                            <div class="text-xs text-slate-600">${caseStudy.results.roas.improvement}</div>
+                        </div>
+                    `);
+                }
+                if (caseStudy.results.margin) {
+                    additionalMetrics.push(`
+                        <div class="text-center">
+                            <div class="text-2xl font-black mb-1" style="color: #0B4A7D;">${caseStudy.results.margin.after}%</div>
+                            <div class="text-sm font-semibold" style="color: #F28C22;">Margin</div>
+                            <div class="text-xs text-slate-600">${caseStudy.results.margin.improvement}</div>
+                        </div>
+                    `);
+                }
+                if (caseStudy.results.waste) {
+                    additionalMetrics.push(`
+                        <div class="text-center">
+                            <div class="text-2xl font-black mb-1" style="color: #0B4A7D;">${caseStudy.results.waste.after}%</div>
+                            <div class="text-sm font-semibold" style="color: #F28C22;">Waste Reduced</div>
+                            <div class="text-xs text-slate-600">${caseStudy.results.waste.improvement}</div>
+                        </div>
+                    `);
+                }
+                if (caseStudy.results.scaling) {
+                    additionalMetrics.push(`
+                        <div class="text-center">
+                            <div class="text-2xl font-black mb-1" style="color: #0B4A7D;">${caseStudy.results.scaling.after}%</div>
+                            <div class="text-sm font-semibold" style="color: #F28C22;">Scaling Capacity</div>
+                            <div class="text-xs text-slate-600">${caseStudy.results.scaling.improvement}</div>
+                        </div>
+                    `);
+                }
+                
+                document.getElementById('additional-metrics').innerHTML = additionalMetrics.join('');
+            }
+            
+            // Populate metrics
+            const metricsContainer = document.getElementById('metrics-container');
+            metricsContainer.innerHTML = caseStudy.metrics.map(metric => `
+                <div class="bg-white rounded-2xl border-2 p-6 text-center lift-card" style="border-color: rgba(11,74,125,0.1);">
+                    <div class="text-4xl font-black mb-2" style="color: #0B4A7D;">${metric.value}</div>
+                    <div class="text-lg font-semibold mb-1" style="color: #F28C22;">${metric.label}</div>
+                    <div class="text-sm text-slate-600">${metric.sub}</div>
+                </div>
+            `).join('');
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', populateCaseStudy);
+    </script>
+</body>
+</html>
